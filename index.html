@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz de Ingeniería de Software</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>Quiz de Ingeniería de Software</h1>
+  <p class="sub">Opción múltiple con explicación inmediata de cada respuesta · Contenido de los 13 apuntes de la cátedra</p>
+
+  <section id="setup" class="card">
+    <h2>1. Elegí los temas</h2>
+    <div class="topics" id="topics"></div>
+    <div class="row"><button class="link" id="all">Marcar todos</button><button class="link" id="none">Desmarcar todos</button></div>
+    <div class="row">
+      <label>Cantidad de preguntas:
+        <select id="count"></select></label>
+      <label><input type="checkbox" id="shuf" checked> Mezclar preguntas y opciones</label>
+    </div>
+    <div class="row"><button id="start">Empezar</button><span id="avail" class="sub" style="margin:0"></span></div>
+  </section>
+
+  <section id="play" class="hidden">
+    <div class="card">
+      <div class="meta"><span id="prog"></span><span id="sc"></span></div>
+      <div class="bar"><i id="barfill"></i></div>
+      <span class="tag" id="topic"></span>
+      <div class="q" id="qtext"></div>
+      <div id="opts"></div>
+      <div id="fb" class="hidden"></div>
+      <div class="row"><button id="next" class="hidden">Siguiente</button><button class="ghost" id="quit">Terminar ahora</button></div>
+    </div>
+  </section>
+
+  <section id="end" class="hidden">
+    <div class="card">
+      <p class="score" id="final"></p>
+      <p id="msg" class="sub"></p>
+      <h2>Resultado por tema</h2>
+      <table id="bytopic"></table>
+      <div class="row">
+        <button id="retry">Repetir solo las falladas</button>
+        <button class="ghost" id="again">Volver al inicio</button>
+      </div>
+    </div>
+    <div class="card" id="reviewcard">
+      <h2>Preguntas falladas</h2>
+      <div id="review"></div>
+    </div>
+  </section>
+</div>
+
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
