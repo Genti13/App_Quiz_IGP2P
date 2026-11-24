@@ -9,51 +9,135 @@
 <body>
 <div class="wrap">
   <h1>Quiz de Ingeniería de Software</h1>
-  <p class="sub">Opción múltiple con explicación inmediata de cada respuesta · Contenido de los 13 apuntes de la cátedra</p>
+  <p class="sub">Opción múltiple con feedback inmediato · Material de la cátedra y parciales</p>
 
-  <section id="setup" class="card">
-    <h2>1. Elegí los temas</h2>
-    <div class="topics" id="topics"></div>
-    <div class="row"><button class="link" id="all">Marcar todos</button><button class="link" id="none">Desmarcar todos</button></div>
-    <div class="row">
-      <label>Cantidad de preguntas:
-        <select id="count"></select></label>
-      <label><input type="checkbox" id="shuf" checked> Mezclar preguntas y opciones</label>
-    </div>
-    <div class="row"><button id="start">Empezar</button><span id="avail" class="sub" style="margin:0"></span></div>
-  </section>
+  <nav class="tabs" role="tablist" aria-label="Secciones">
+    <button role="tab" class="tab" data-tab="generativo" id="t-generativo" aria-controls="tab-generativo">Quiz Generativo</button>
+    <button role="tab" class="tab" data-tab="legacy" id="t-legacy" aria-controls="tab-legacy">Quiz Legacy</button>
+    <button role="tab" class="tab" data-tab="desarrollo" id="t-desarrollo" aria-controls="tab-desarrollo">Desarrollo</button>
+  </nav>
 
-  <section id="play" class="hidden">
-    <div class="card">
-      <div class="meta"><span id="prog"></span><span id="sc"></span></div>
-      <div class="bar"><i id="barfill"></i></div>
-      <span class="tag" id="topic"></span>
-      <div class="q" id="qtext"></div>
-      <div id="opts"></div>
-      <div id="fb" class="hidden"></div>
-      <div class="row"><button id="next" class="hidden">Siguiente</button><button class="ghost" id="quit">Terminar ahora</button></div>
-    </div>
-  </section>
+  <main>
+    <section id="tab-generativo" role="tabpanel" aria-labelledby="t-generativo" class="panel hidden"></section>
+    <section id="tab-legacy" role="tabpanel" aria-labelledby="t-legacy" class="panel hidden"></section>
 
-  <section id="end" class="hidden">
-    <div class="card">
-      <p class="score" id="final"></p>
-      <p id="msg" class="sub"></p>
-      <h2>Resultado por tema</h2>
-      <table id="bytopic"></table>
-      <div class="row">
-        <button id="retry">Repetir solo las falladas</button>
-        <button class="ghost" id="again">Volver al inicio</button>
+    <section id="tab-desarrollo" role="tabpanel" aria-labelledby="t-desarrollo" class="panel hidden">
+      <div class="card">
+        <h2>Preguntas de desarrollo</h2>
+        <p class="sub" style="margin:0">Respuestas modelo (información estática) a las preguntas de desarrollo de los parciales.</p>
       </div>
-    </div>
-    <div class="card" id="reviewcard">
-      <h2>Preguntas falladas</h2>
-      <div id="review"></div>
-    </div>
-  </section>
+
+      <article class="card dev">
+        <h3>1. Concepto, composición y objetivo del proceso de software</h3>
+        <ul>
+          <li><b>Concepto de proceso:</b> en Ingeniería de Software, el proceso define el <b>marco de trabajo para el conjunto de actividades del desarrollo</b> y lo abarca en su totalidad. Consiste en analizar las necesidades de una organización en un dominio determinado, construir una solución que las satisfaga y reinsertarla en dicho dominio bajo un marco de gestión, seguimiento y control de calidad.</li>
+          <li><b>Composición:</b> de acuerdo con los estándares y apuntes de la disciplina, el proceso software está compuesto por <b>cuatro procesos principales</b>:
+            <ol>
+              <li><b>Proceso de selección de un modelo de ciclo de vida (MCVS):</b> identifica y selecciona el modelo de ciclo de vida más adecuado para soportar el proyecto.</li>
+              <li><b>Proceso de gestión del proyecto:</b> establece la estructura del proyecto y asegura su administración continua (iniciación, planificación, estimación de recursos, seguimiento, control y análisis de riesgos).</li>
+              <li><b>Procesos orientados al desarrollo del software:</b> corresponden a las actividades de construcción directa y se subdividen en:
+                <ul>
+                  <li><i>Pre-desarrollo:</i> exploración de conceptos y asignación del sistema.</li>
+                  <li><i>Desarrollo:</i> análisis de requisitos, diseño e implementación.</li>
+                  <li><i>Post-desarrollo:</i> instalación, operación y soporte, mantenimiento y retiro.</li>
+                </ul>
+              </li>
+              <li><b>Procesos integrales del proyecto:</b> procesos transversales y simultáneos al desarrollo que garantizan la calidad y usabilidad del sistema (verificación y validación, gestión de la configuración, desarrollo de documentación y formación).</li>
+            </ol>
+          </li>
+          <li><b>Objetivo:</b> persigue obtener software <b>confiable, rentable y de calidad</b> que cumpla con los requisitos del usuario. Proporciona una estructura clara para planificar, estimar, coordinar recursos, controlar plazos y reducir los costos del proyecto mediante la detección temprana de errores.</li>
+        </ul>
+      </article>
+
+      <article class="card dev">
+        <h3>2. Descripción breve de un modelo de proceso conocido</h3>
+        <p><b>Modelo Cascada (o Lineal Secuencial):</b> propuesto originalmente por Royce (1970), es uno de los primeros modelos de desarrollo formalizados. Se caracteriza por organizar las fases del desarrollo de manera estrictamente <b>secuencial y sucesiva</b>. Cada etapa debe completarse y revisarse antes de dar inicio a la siguiente.</p>
+        <p>Sus etapas principales incluyen:</p>
+        <ol>
+          <li><b>Análisis de requerimientos:</b> recopilación y documentación completa de las necesidades del usuario.</li>
+          <li><b>Diseño del sistema y de programas:</b> traducción de requisitos a arquitecturas y estructuras de datos.</li>
+          <li><b>Codificación:</b> generación del código fuente.</li>
+          <li><b>Pruebas (unitarias, de integración y de sistema):</b> verificación del correcto funcionamiento del software.</li>
+          <li><b>Operación y mantenimiento:</b> ajustes y corrección de errores tras la entrega.</li>
+        </ol>
+      </article>
+
+      <article class="card dev">
+        <h3>3. Diferencias entre los modelos de ciclo de vida: Cascada, Incremental y Evolutivo</h3>
+        <h4>Modelo en Cascada</h4>
+        <ul>
+          <li><b>Enfoque:</b> secuencial, rígido y heredado del mundo de la manufactura.</li>
+          <li><b>Entregas:</b> genera <b>una única entrega final</b> del sistema completo al terminar el proyecto.</li>
+          <li><b>Requisitos:</b> asume que todos los requisitos están totalmente definidos y congelados al inicio, lo que dificulta adaptarse a cambios posteriores.</li>
+        </ul>
+        <h4>Modelo Incremental</h4>
+        <ul>
+          <li><b>Enfoque:</b> combina la secuencia lineal aplicada repetidamente con entregas por bloques o módulos funcionales.</li>
+          <li><b>Entregas:</b> el sistema se divide en subsistemas y se entrega de manera <b>gradual mediante versiones operacionales</b>. Se comienza con un «producto esencial» (núcleo) al cual se le van sumando nuevas funcionalidades en cada incremento.</li>
+          <li><b>Requisitos:</b> aunque el alcance global suele conocerse, la implementación se dosifica para gestionar riesgos o restricciones de personal.</li>
+        </ul>
+        <h4>Modelo Evolutivo (ej. prototipado evolutivo, espiral)</h4>
+        <ul>
+          <li><b>Enfoque:</b> concibe el desarrollo de software como un proceso iterativo de resolución de problemas y aprendizaje continuo donde el producto <b>evoluciona dinámicamente</b>.</li>
+          <li><b>Entregas / iteración:</b> a diferencia del incremental (que agrega partes completas a un núcleo), el modelo evolutivo suele entregar una versión preliminar o prototipo funcional completo (pero simple/primitivo), para luego <b>refinar, cambiar y mejorar la calidad de todas sus partes</b> a lo largo de ciclos iterativos sucesivos basados en la retroalimentación del cliente y el análisis de riesgos.</li>
+          <li><b>Requisitos:</b> es ideal cuando los requisitos son inciertos, incompletos o cambian constantemente durante el proyecto.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
 </div>
 
+<template id="quiz-tpl">
+  <section class="js-setup card">
+    <h2>1. Elegí los temas</h2>
+    <p class="js-note sub" style="margin:0 0 12px"></p>
+    <div class="topics js-topics"></div>
+    <div class="row"><button class="link js-all" type="button">Marcar todos</button><button class="link js-none" type="button">Desmarcar todos</button></div>
+    <div class="row">
+      <label>Cantidad de preguntas:
+        <select class="js-count"></select></label>
+      <label><input type="checkbox" class="js-shuf" checked> Mezclar preguntas y opciones</label>
+    </div>
+    <div class="row"><button class="js-start" type="button">Empezar</button><span class="js-avail sub" style="margin:0"></span></div>
+  </section>
+
+  <section class="js-play hidden">
+    <div class="card">
+      <div class="meta"><span class="js-prog"></span><span class="js-sc"></span></div>
+      <div class="bar"><i class="js-barfill"></i></div>
+      <span class="tag js-topic"></span>
+      <div class="q js-qtext"></div>
+      <div class="hint js-hint hidden"></div>
+      <div class="js-opts"></div>
+      <div class="js-fb hidden"></div>
+      <div class="row">
+        <button class="js-confirm hidden" type="button">Confirmar respuesta</button>
+        <button class="js-next hidden" type="button">Siguiente</button>
+        <button class="ghost js-quit" type="button">Terminar ahora</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="js-end hidden">
+    <div class="card">
+      <p class="score js-final"></p>
+      <p class="js-msg sub"></p>
+      <h2>Resultado por tema</h2>
+      <table class="js-bytopic"></table>
+      <div class="row">
+        <button class="js-retry" type="button">Repetir solo las falladas</button>
+        <button class="ghost js-again" type="button">Volver al inicio</button>
+      </div>
+    </div>
+    <div class="card js-reviewcard">
+      <h2>Preguntas falladas</h2>
+      <div class="js-review"></div>
+    </div>
+  </section>
+</template>
+
 <script src="questions.js"></script>
+<script src="legacy.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

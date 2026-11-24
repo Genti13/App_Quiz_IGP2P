@@ -42,3 +42,23 @@ td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left}
 td.n{text-align:right;white-space:nowrap}
 .hidden{display:none}
 .rev{margin:8px 0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:.92rem}
+
+/* ---- Pestañas ---- */
+.tabs{display:flex;gap:4px;border-bottom:2px solid var(--line);margin:0 0 18px;overflow-x:auto;overflow-y:hidden}
+.tab{background:transparent;color:var(--mute);border:none;border-bottom:3px solid transparent;border-radius:8px 8px 0 0;padding:10px 16px;margin-bottom:-2px;font-weight:600;white-space:nowrap}
+.tab:hover{color:var(--ink);background:var(--sel)}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab:focus-visible,.opt:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- Selección múltiple ---- */
+.hint{background:var(--sel);color:var(--ink);border-radius:8px;padding:6px 12px;margin:0 0 12px;font-size:.9rem}
+.opt .box{display:inline-block;width:1.4em;font-size:1.1em;color:var(--accent)}
+.opt.sel{border-color:var(--accent);background:var(--sel)}
+.opt.miss{border-color:var(--ok);border-style:dashed;background:var(--okbg)}
+.opt.miss .why b.t{color:var(--ok)}
+
+/* ---- Desarrollo ---- */
+.dev h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.dev h4{margin:16px 0 4px;font-size:1rem}
+.dev ul,.dev ol{padding-left:1.3em;margin:6px 0}
+.dev li{margin:6px 0}
