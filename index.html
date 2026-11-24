@@ -83,6 +83,95 @@
           <li><b>Requisitos:</b> es ideal cuando los requisitos son inciertos, incompletos o cambian constantemente durante el proyecto.</li>
         </ul>
       </article>
+
+      <article class="card dev">
+        <h3>4. Modelo de ciclo de vida</h3>
+        <p>Un <b>Modelo de Ciclo de Vida del Software (MCVS)</b> es la estructura o esquema que describe los distintos estados por los que pasa un producto software desde su concepción inicial hasta su retiro por obsolescencia. Este modelo establece el orden de ejecución, la secuencia y la relación entre las diferentes etapas y actividades del desarrollo de software.</p>
+        <h4>Aspectos clave de un modelo de ciclo de vida</h4>
+        <ul>
+          <li><b>Propósito principal:</b> proporcionar un marco organizativo que sirva de base para planificar, estimar tiempos y costos, asignar personal, coordinar tareas y controlar el progreso del proyecto.</li>
+          <li><b>Encadenamiento de actividades:</b> determina de qué manera se articulan las tareas del proceso software (por ejemplo, si ciertas fases se ejecutan de forma estrictamente secuencial, si se repiten en ciclos iterativos, o si se distribuyen en entregas incrementales).</li>
+          <li><b>Visibilidad y control:</b> define hitos, revisiones y entregables intermedios o finales (como documentos de diseño, código probado o prototipos) que permiten a los gestores evaluar el avance real del proyecto.</li>
+        </ul>
+        <h4>Relación entre el proceso software y el MCV</h4>
+        <p>Mientras que el proceso software define <b>qué</b> actividades esenciales deben realizarse (requisitos, diseño, pruebas, gestión de calidad, etc.), el modelo de ciclo de vida define <b>cuándo y en qué orden</b> se ejecutan dichas actividades en el tiempo. Esta adaptación se formaliza mediante la herramienta conocida como <b>Mapa de Actividades</b>.</p>
+      </article>
+
+      <article class="card dev">
+        <h3>5. Diferencias entre los modelos de ciclo de vida: Cascada, Modelo en V, Prototipado, Incremental, Iterativo, Evolutivo, Espiral, WINWIN, DRA</h3>
+        <h4>5.1. Modelo en Cascada (Lineal Secuencial)</h4>
+        <ul>
+          <li><b>Enfoque:</b> Organiza las actividades de manera estrictamente <b>secuencial y lineal</b>. Una etapa (análisis, diseño, codificación, pruebas, mantenimiento) debe completarse y revisarse totalmente antes de iniciar la siguiente.</li>
+          <li><b>Requerimientos:</b> Asume que los requerimientos están <b>completamente definidos y congelados</b> desde el principio.</li>
+          <li><b>Entregas:</b> Genera una <b>única entrega final</b> del sistema muy avanzado el proyecto.</li>
+          <li><b>Diferencia clave:</b> Es el modelo más rígido e inelástico frente a cambios. Si se comete un error en los requerimientos, corregirlo en fases tardías resulta sumamente costoso.</li>
+        </ul>
+        <h4>5.2. Modelo en V</h4>
+        <ul>
+          <li><b>Enfoque:</b> Es una variación del modelo en cascada que enfatiza la <b>verificación y validación</b> en cada nivel del desarrollo.</li>
+          <li><b>Estructura:</b> Relaciona directamente las fases de desarrollo (lado izquierdo de la V: análisis, diseño) con sus correspondientes fases de prueba (lado derecho de la V: pruebas unitarias/integración, prueba de sistema, prueba de aceptación).</li>
+          <li><b>Diferencia clave:</b> A diferencia de la cascada tradicional (que se enfoca en artefactos finales), el Modelo en V hace <b>explícita la correspondencia entre la especificación y las pruebas</b>, permitiendo iterar hacia la izquierda de la V si se detectan fallas en la validación.</li>
+        </ul>
+        <h4>5.3. Prototipado</h4>
+        <ul>
+          <li><b>Enfoque:</b> Diseñado para proyectos donde los requerimientos son <b>ambiguos o desconocidos</b>, o cuando hay dudas sobre la viabilidad técnica de una solución.</li>
+          <li><b>Construcción:</b> Crea versiones reducidas o preliminares del software para ser probadas y evaluadas por el cliente.</li>
+          <li><b>Variantes:</b> <ul><li><i>Desechable:</i> se construye para aclarar requerimientos y luego se descarta.</li><li><i>Maqueta:</i> muestra formatos e interfaces estáticas sin procesamiento real.</li><li><i>Evolutivo:</i> el prototipo inicial se va ampliando y refinando hasta convertirse en el sistema final.</li></ul></li>
+          <li><b>Diferencia clave:</b> Prioriza la <b>retroalimentación temprana y la exploración visual</b> por sobre la especificación formal exhaustiva inicial.</li>
+        </ul>
+        <h4>5.4. Modelo Incremental</h4>
+        <ul>
+          <li><b>Enfoque:</b> Divide el sistema completo en <b>subsistemas funcionales</b> según su alcance.</li>
+          <li><b>Entregas:</b> Combina la secuencia lineal con la entrega de <b>versiones operacionales graduales</b>. Comienza con la entrega de un «producto esencial» (núcleo básico) y añade <b>nuevas funcionalidades</b> en cada incremento.</li>
+          <li><b>Diferencia clave:</b> Se enfoca en <b>agregar nuevas partes o módulos funcionales</b> que no existían en la versión anterior.</li>
+        </ul>
+        <h4>5.5. Modelo Iterativo (Refinamiento Sucesivo)</h4>
+        <ul>
+          <li><b>Enfoque:</b> Construye un sistema que incluye <b>todas las funcionalidades desde la primera versión</b>, pero de forma simple, torpe o primitiva.</li>
+          <li><b>Evolución:</b> En las siguientes versiones (iteraciones) no se agregan necesariamente nuevas funciones, sino que se <b>refina y mejora la calidad, velocidad y usabilidad</b> de las funciones existentes.</li>
+          <li><b>Diferencia clave (Incremental vs. Iterativo):</b> Mientras que el <i>Incremental</i> añade módulos nuevos a un núcleo (ej. V1: escribir texto; V2: escribir + cortar/pegar), el <i>Iterativo</i> entrega todo desde V1 y lo perfecciona (ej. V1: cortar/pegar lento; V2: cortar/pegar optimizado).</li>
+        </ul>
+        <h4>5.6. Modelos Evolutivos</h4>
+        <ul>
+          <li><b>Enfoque:</b> Familia de modelos (que engloba al prototipado evolutivo, el incremental y el espiral) que concibe al software no como un producto de fabricación fija, sino como un <b>proceso dinámico de creación y aprendizaje continuo</b>.</li>
+          <li><b>Diferencia clave:</b> Acepta explícitamente que los requerimientos cambian y evolucionan con el tiempo, reemplazando la rigidez lineal por <b>ciclos iterativos de adaptación</b>.</li>
+        </ul>
+        <h4>5.7. Modelo Espiral (Boehm)</h4>
+        <ul>
+          <li><b>Enfoque:</b> Modelo evolutivo <b>dirigido fundamentalmente por el análisis de riesgos</b> en cada iteración.</li>
+          <li><b>Dinámica:</b> Representa el proyecto en ciclos en forma de espiral. Cada vuelta aborda 4 sectores principales: <i>comunicación con el cliente</i>, <i>planificación</i>, <i>análisis de riesgos</i> e <i>ingeniería/construcción</i>.</li>
+          <li><b>Diferencia clave:</b> Es el único modelo que coloca la <b>identificación y eliminación de riesgos técnicos y financieros</b> como el motor principal de cada ciclo de desarrollo.</li>
+        </ul>
+        <h4>5.8. Modelo Espiral WINWIN (Victoria & Victoria)</h4>
+        <ul>
+          <li><b>Enfoque:</b> Extensión del modelo espiral de Boehm que incorpora una actividad formal de <b>negociación entre cliente y desarrollador</b> al inicio de cada ciclo.</li>
+          <li><b>Mecanismo:</b> Busca establecer «condiciones de victoria» donde el cliente gana obteniendo lo que necesita y el desarrollador gana al trabajar con costos y plazos realistas. Define tres puntos de fijación u hitos de decisión: <i>Objetivos del Ciclo de Vida (OCV)</i>, <i>Arquitectura del Ciclo de Vida (ACV)</i> y <i>Capacidad Operativa Inicial (COI)</i>.</li>
+          <li><b>Diferencia clave:</b> Resuelve los conflictos de requerimientos mediante la <b>negociación estructurada costo-beneficios</b> antes de avanzar a las etapas de diseño.</li>
+        </ul>
+        <h4>5.9. Modelo DRA / RAD (Desarrollo Rápido de Aplicaciones)</h4>
+        <ul>
+          <li><b>Enfoque:</b> Adaptación a alta velocidad del modelo en cascada diseñada para completar sistemas en <b>ciclos extremadamente cortos (60 a 90 días)</b>.</li>
+          <li><b>Estrategia:</b> Requiere modularizar el sistema para que <b>múltiples equipos trabajen en paralelo</b> en fases de <i>modelado de gestión, datos, procesos, generación de aplicaciones</i> (con herramientas de 4ª generación y reutilización de componentes) y <i>pruebas</i>.</li>
+          <li><b>Diferencia clave:</b> Prioriza la <b>velocidad extrema y el tiempo de mercado</b> mediante el uso intensivo de componentes reutilizables y equipos simultáneos.</li>
+        </ul>
+        <h4>Tabla comparativa resumen</h4>
+        <div class="tscroll">
+        <table class="cmp">
+          <thead><tr><th>Modelo</th><th>Requerimientos</th><th>Entregas</th><th>Gestión de riesgo</th><th>Característica distintiva</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Cascada</th><td>Definidos y congelados al inicio</td><td>Una única entrega final</td><td>Baja / tardía</td><td>Secuencialidad rígida por etapas.</td></tr>
+            <tr><th scope="row">Modelo en V</th><td>Definidos al inicio</td><td>Una única entrega final</td><td>Moderada (mediante V&V)</td><td>Asocia cada fase de diseño con su prueba.</td></tr>
+            <tr><th scope="row">Prototipado</th><td>Incompletos o desconocidos</td><td>Versiones reducidas/demos</td><td>Alta para aclarar alcance</td><td>Validación visual rápida con el cliente.</td></tr>
+            <tr><th scope="row">Incremental</th><td>Conocidos a nivel general</td><td>Graduales por módulos</td><td>Moderada por bloques</td><td>Suma nuevas funcionalidades por versión.</td></tr>
+            <tr><th scope="row">Iterativo</th><td>Definidos a alto nivel</td><td>Versión completa desde inicio</td><td>Moderada</td><td>Perfecciona la calidad del código/funciones.</td></tr>
+            <tr><th scope="row">Evolutivo</th><td>Inciertos y cambiantes</td><td>Múltiples versiones mejoradas</td><td>Alta</td><td>El producto evoluciona con el aprendizaje.</td></tr>
+            <tr><th scope="row">Espiral</th><td>Se descubren por ciclos</td><td>Iterativas / prototipos</td><td><b>Muy alta (eje del modelo)</b></td><td>Evaluaciones de riesgo en cada vuelta.</td></tr>
+            <tr><th scope="row">WINWIN</th><td>Negociables entre partes</td><td>Iterativas tras acuerdo</td><td>Alta</td><td>Negociación victoria-victoria e hitos OCV/ACV/COI.</td></tr>
+            <tr><th scope="row">DRA (RAD)</th><td>Claros y muy modularizables</td><td>Sistema final en 60–90 días</td><td>Limitada (no apto para alto riesgo)</td><td>Equipos en paralelo y alta reutilización.</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </article>
     </section>
   </main>
 </div>

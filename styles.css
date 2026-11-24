@@ -62,3 +62,9 @@ td.n{text-align:right;white-space:nowrap}
 .dev h4{margin:16px 0 4px;font-size:1rem}
 .dev ul,.dev ol{padding-left:1.3em;margin:6px 0}
 .dev li{margin:6px 0}
+.tscroll{overflow-x:auto;margin-top:6px;border:1px solid var(--line);border-radius:8px}
+table.cmp{min-width:680px;font-size:.88rem}
+table.cmp th,table.cmp td{padding:8px 10px;vertical-align:top;border-bottom:1px solid var(--line)}
+table.cmp thead th{background:var(--sel);position:sticky;top:0}
+table.cmp tbody th{white-space:nowrap}
+table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:none}
